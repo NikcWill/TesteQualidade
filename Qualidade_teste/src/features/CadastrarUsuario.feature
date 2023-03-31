@@ -35,7 +35,7 @@ Funcionalidade: Cadastrar usuários
     E o usário deve ser apresentado na lista de usuários
     E a ação dece ser registrada ma auditoria
 
-  gjhghhjhg
+
   Esquema do Cenário: Os campos Nome, Login e Senha são obrigatórios
     Dado que o usuário não preencheu <campo>
     Quando clicar em Salvar
