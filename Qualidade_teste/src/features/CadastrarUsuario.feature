@@ -41,7 +41,7 @@ Funcionalidade: Cadastrar usuários
     Quando clicar em Salvar
     Então deve apresentar a mensagem de feedback informando que <campo><mensagem>
     Exemplos:
-      |  campo                          | mensagem          |
+      |  campo                          | message          |
       | o campo Nome                    | é obrigatório     |
       | o campo Login                   | é obrigatório     |
       | o campo Senha                   | é obrigatório     |
