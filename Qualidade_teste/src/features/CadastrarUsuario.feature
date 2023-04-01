@@ -33,7 +33,7 @@ sdsad
     E deve apresentar a mensagem de feedback Usuário salvo com sucesso!
     E o usário deve ser apresentado na lista de usuários
     E a ação dece ser registrada ma auditoria
-fds
+
 
   Esquema do Cenário: Os campos Nome, Login e Senha são obrigatórios
     Dado que o usuário não preencheu <campo>
