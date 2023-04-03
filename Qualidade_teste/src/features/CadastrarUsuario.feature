@@ -32,7 +32,6 @@ Funcionalidade: Cadastrar usuários
     Quando digitar o 257º caracter
     Então deve apresentar a mensagem de feedback informando que <campo><mensagem>
     Exemplos:
-
       |  campo                          | mensagem                           |
       | o campo Nome                    | tem o limite de 256 caracteres     |
       | o campo Nome da Mãe             | tem o limite de 256 caracteres     |
@@ -43,14 +42,36 @@ Funcionalidade: Cadastrar usuários
     Quando clicar em outro campo
     Então deve apresentar a mensagem de feedback informando que CPF não está valido
     Exemplos:
-
-
       |CPF não é valido|
+
 
   Esquema do Cenário: O campo login deve aceitar no máximo 100 caracteres
     Dado que o usuário tente preencher login com 101 caracteres
     Quando digitar o 101º caracter
     Então deve apresentar a mensagem de feedback informando que o campo login permite 101 caracteres
     Exemplos:
-
       |O campo Login deverá ter até 100 caracteres|
+
+
+  Esquema do Cenário: A senha deve ser formada por pelo menos um carácter especial,por pelo menos uma letra maiúscula e no máximo 8 caracteres
+    Dado que o usuário tente preencher o campo senha sem caracter especial
+    Quando digitar o ultimo caracter
+    Então deve apresentar a mensagem de feedback informando que o campo senha deve conter pelo menos um carácter especial,por pelo menos uma letra maiúscula
+    Exemplos:
+      |O campo Senha deverá conter pelo menos um carácter especial,por pelo menos uma letra maiúscula |
+
+
+  Esquema do Cenário: Os campos Nome, Login e Senha são obrigatórios
+    Dado que o usuário não preencheu <campo>
+    Quando clicar em Salvar
+    Então deve apresentar a mensagem de feedback informando que <campo><mensagem>
+    Exemplos:
+      |  campo                          | mensagem          |
+      | o campo Nome                    | é obrigatório     |
+      | o campo Login                   | é obrigatório     |
+      | o campo Senha                   | é obrigatório     |
+      | os campos Nome e Login          | são obrigatórios  |
+      | os campos Nome e Senha          | são obrigatórios  |
+      | os campos Login e Senha         | são obrigatórios  |
+      | os campos Nome, Login e Senha   | são obrigatórios  |
+
