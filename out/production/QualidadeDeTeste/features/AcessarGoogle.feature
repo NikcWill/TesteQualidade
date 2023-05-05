@@ -3,9 +3,11 @@
 Funcionalidade: Acessar Google
 
   Contexto:
-      Dado que o usuário instanciou o chrome-drive
+      Dado que o usuário instanciou o chrome-driver
 
     Cenário: Acessar Google
       Dado que o usuário digitou o endereço do Google no navegador
+      E que o usuário digitou SENAC palhoça
       Quando clicar em Enter
-      Então a página do Google deve abrir
+      Então deve apresentar a lista de pesquisa com SENAC Palhoça
+

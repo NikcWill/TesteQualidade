@@ -5,6 +5,6 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features =  "Qualidade_teste/src/features/AcessarGoogle.feature", glue = "")
+@CucumberOptions(features =  "Qualidade_teste/src/features/Componentes.feature", glue = "")
 public class TestRunner {
 }
