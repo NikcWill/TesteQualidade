@@ -3,11 +3,11 @@ package stepdefinitions;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
-import util.Componetes;
+import util.Componentes;
 
 public class ComponetesStep {
 
-    Componetes componetes = new Componetes();
+    Componentes componetes = new Componentes();
 
     @Dado("que o usuário acessou o arquivo Campo de Treinamento")
     public void que_o_usuário_acessou_o_arquivo_Campo_de_Treinamento() {

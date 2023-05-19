@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-public class Componetes {
+public class Componentes {
     private WebDriver driver;
 
     public void inicializar(){
@@ -16,7 +16,7 @@ public class Componetes {
 
         driver.manage().window().maximize();
 
-        driver.get("file:///" + System.getProperty("user.dir") + "/Driver/componentes.html");
+        //driver.get("file:///" + System.getProperty("user.dir") + "/Driver/componentes.html");
     }
 
     public void acessarGoogle() {
@@ -28,6 +28,10 @@ public class Componetes {
         driver.findElement(By.name("q")).sendKeys("SENAC Palhoça");
     }
 
+    public void pesquisarGoogleNexxra(){
+        driver.findElement(By.name("q")).sendKeys("Nexxera Florianópolis");
+    }
+
     public  void clicarEnter(){
         driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
     }
@@ -35,6 +39,20 @@ public class Componetes {
     public void resultadoPesquisa(){
         driver.findElement(By.id("res")).isDisplayed();
         Assert.assertTrue(driver.getTitle().contains("SENAC"));
+    }
+
+    public void resultadoPesquisaNexxera(){
+        driver.findElement(By.id("res")).isDisplayed();
+        Assert.assertTrue(driver.getTitle().contains("Nexxera"));
+    }
+
+    public void acessarResultadoPesquisa(){
+        driver.findElement(By.className("LC20lb MBeuO DKV0Md")).click();
+    }
+    public void validarAcessoResultado(){
+        String resultado = driver.getCurrentUrl();
+        Assert.assertEquals("https://www.nexxera.com/",
+                resultado);
     }
     public  void fecharNavegador(){
         driver.quit();
