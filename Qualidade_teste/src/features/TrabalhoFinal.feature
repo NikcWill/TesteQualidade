@@ -6,8 +6,6 @@ Funcionalidade: Cadastrar usuario e acessar o site da empresa Nexxera Florianóp
     Contexto:
         Dado que o usuário instanciou o chrome-driver
 
-
-
     @Questão1
     Esquema do Cenário: Preenchimento de cadastro
 
@@ -27,17 +25,17 @@ Funcionalidade: Cadastrar usuario e acessar o site da empresa Nexxera Florianóp
     @Questão2
     Esquema do Cenário: Os campos Nome, Sobrenome e Sexo são obrigatórios
         Dado que o usuário não preencheu <campo>
-        Quando clicar em Salvar
-        Então deve apresentar a mensagem de feedback informando que <campo><mensagem>
+        Quando cadastrar
+        Então deve apresentar a mensagem de feedback informando que <mensagem>
         Exemplos:
-            |  campo                          | mensagem          |
-            | o campo Nome                    | Nome eh obrigatorio     |
-            | o campo Sobrenome               | Sobrenome eh obrigatorio   |
-            | o campo Sexo                    | Sexo eh obrigatorio    |
-            | os campos Nome e Sobrenome      | Nome eh obrigatorio  |
-            | os campos Nome e Sexo           | Nome eh obrigatorio |
+            |  campo                          | mensagem                  |
+            | o campo Nome                    | Nome eh obrigatorio       |
+            | o campo Sobrenome               | Sobrenome eh obrigatorio  |
+            | o campo Sexo                    | Sexo eh obrigatorio       |
+            | os campos Nome e Sobrenome      | Nome eh obrigatorio       |
+            | os campos Nome e Sexo           | Nome eh obrigatorio       |
             | os campos Sobrenome e Sexo      | Sobrenome eh obrigatorio  |
-            | os campos Nome, Sobrenome e Sexo| Nome eh obrigatorio |
+            | os campos Nome, Sobrenome e Sexo| Nome eh obrigatorio       |
 
 
 

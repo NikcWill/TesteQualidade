@@ -15,7 +15,6 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário prencheu os campos nome, sobrenome, sexo, comida preferida, escolaridade, esporte que pratica, sugestão")
     public void que_o_usuário_prencheu_os_campos_nome_sobrenome_sexo_comida_preferida_escolaridade_esporte_que_pratica_sugestão() {
-
         componentes.prencherNome();
         componentes.prencherSobrenome();
         componentes.prencherSexo();
@@ -28,7 +27,6 @@ public class TrabalhoFinalStep {
     @Quando("clicar em Cadastrar")
     public void clicar_em_Cadastrar() {
         componentes.clicarCadastrar();
-
     }
 
     @Então("no campo nome deverá retornar o formulário preenchido com as Jonh")
@@ -72,9 +70,92 @@ public class TrabalhoFinalStep {
         componentes.validarSugestoes();
         componentes.fecharNavegador();
     }
+
+    @Dado("que o usuário não preencheu o campo Nome")
+    public void que_o_usuário_não_preencheu_o_campo_Nome() {
+        componentes.prencherSobrenome();
+        componentes.prencherSexo();
+    }
+
+    @Quando("cadastrar")
+    public void cadastrar() {
+        componentes.clicarCadastrar();
+    }
+
+    @Então("deve apresentar a mensagem de feedback informando que Nome eh obrigatorio")
+    public void deve_apresentar_a_mensagem_de_feedback_informando_que_Nome_eh_obrigatorio() {
+        componentes.validarAlertNome();
+        componentes.fecharNavegador();
+    }
+
+    @Dado("que o usuário não preencheu o campo Sobrenome")
+    public void que_o_usuário_não_preencheu_o_campo_Sobrenome() {
+        componentes.prencherNome();
+        componentes.prencherSexo();
+    }
+
+    @Então("deve apresentar a mensagem de feedback informando que Sobrenome eh obrigatorio")
+    public void deve_apresentar_a_mensagem_de_feedback_informando_que_Sobrenome_eh_obrigatorio() {
+        componentes.validarAlertSobrenome();
+        componentes.fecharNavegador();
+    }
+
+    @Dado("que o usuário não preencheu o campo Sexo")
+    public void que_o_usuário_não_preencheu_o_campo_Sexo() {
+        componentes.prencherNome();
+        componentes.prencherSobrenome();
+    }
+
+    @Então("deve apresentar a mensagem de feedback informando que Sexo eh obrigatorio")
+    public void deve_apresentar_a_mensagem_de_feedback_informando_que_Sexo_eh_obrigatorio() {
+        componentes.fecharNavegador();
+    }
+
+    @Dado("que o usuário não preencheu os campos Nome e Sobrenome")
+    public void que_o_usuário_não_preencheu_os_campos_Nome_e_Sobrenome() {
+        componentes.prencherSexo();
+    }
+
+    @Então("deve apresentar a mensagem de feedback informando que os campos Nome e SobrenomeNome eh obrigatorio")
+    public void deve_apresentar_a_mensagem_de_feedback_informando_que_os_campos_Nome_e_SobrenomeNome_eh_obrigatorio() {
+        componentes.validarAlertNome();
+        componentes.fecharNavegador();
+    }
+
+    @Dado("que o usuário não preencheu os campos Nome e Sexo")
+    public void que_o_usuário_não_preencheu_os_campos_Nome_e_Sexo() {
+        componentes.prencherSobrenome();
+    }
+
+    @Então("deve apresentar a mensagem de feedback informando que os campos Nome e SexoNome eh obrigatorio")
+    public void deve_apresentar_a_mensagem_de_feedback_informando_que_os_campos_Nome_e_SexoNome_eh_obrigatorio() {
+        componentes.validarAlertNome();
+    }
+
+    @Dado("que o usuário não preencheu os campos Sobrenome e Sexo")
+    public void que_o_usuário_não_preencheu_os_campos_Sobrenome_e_Sexo() {
+        componentes.prencherNome();
+    }
+
+    @Então("deve apresentar a mensagem de feedback informando que os campos Sobrenome e Sobrenome eh obrigatorio")
+    public void deve_apresentar_a_mensagem_de_feedback_informando_que_os_campos_Sobrenome_e_Sobrenome_eh_obrigatorio() {
+        componentes.validarAlertSobrenome();
+        componentes.fecharNavegador();
+    }
+
+    @Dado("que o usuário não preencheu os campos Nome, Sobrenome e Sexo")
+    public void que_o_usuário_não_preencheu_os_campos_Nome_Sobrenome_e_Sexo() {
+
+    }
+
+    @Então("deve apresentar a mensagem de feedback informando que os campos Nome, Sobrenome e SexoNome eh obrigatorio")
+    public void deve_apresentar_a_mensagem_de_feedback_informando_que_os_campos_Nome_Sobrenome_e_SexoNome_eh_obrigatorio() {
+        componentes.validarAlertNome();
+        componentes.fecharNavegador();
+    }
+
     @Dado("que o usuário pesquisou pela empresa Nexxera Florianópolis no google")
     public void que_o_usuário_pesquisou_pela_empresa_Nexxera_Florianópolis_no_google() {
-        componentes.inicializar();
         componentes.acessarGoogle();
         componentes.pesquisarGoogleNexxra();
         componentes.clicarEnter();
@@ -94,6 +175,7 @@ public class TrabalhoFinalStep {
     @Então("deve acessar o site da Nexxera")
     public void deve_acessar_o_site_da_Nexxera() {
         componentes.validarAcessoResultado();
+        componentes.fecharNavegador();
 
     }
 

@@ -13,11 +13,11 @@ public class Componentes {
     public void inicializar(){
 
         String chromedriver = System.getProperty("user.dir")
-                + "/Qualidade_teste/Driver/chromedriver.exe";
+                + "/Qualidade_teste/Driver/chromedriver";
         System.setProperty("webdriver.chrome.driver", chromedriver);
 
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         driver.get("file:///" + System.getProperty("user.dir") + "/Qualidade_teste/Driver/componentes.html");
     }
@@ -75,6 +75,24 @@ public class Componentes {
 
     }
 
+    public void validarAlertSobrenome(){
+        Alert alert = driver.switchTo().alert();
+        String textoAlerta = alert.getText();
+        System.out.println("entrou");
+        System.out.println(textoAlerta);
+        Assert.assertEquals("Sobrenome eh obrigatorio", textoAlerta);
+
+    }
+
+    public void validarAlertSexo(){
+        Alert alert = driver.switchTo().alert();
+        String textoAlerta = alert.getText();
+        System.out.println("entrou");
+        System.out.println(textoAlerta);
+        Assert.assertEquals("Sexo eh obrigatorio", textoAlerta);
+
+    }
+
     public  void prencherNome(){
         driver.findElement(By.id("elementosForm:nome")).sendKeys("Jonh");
     }
@@ -84,7 +102,6 @@ public class Componentes {
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Jonh", linha);
     }
-
     public void prencherSobrenome(){
         driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Kenedy");
     }
@@ -93,7 +110,6 @@ public class Componentes {
         WebElement resposta = driver.findElement(By.id("descSobrenome"));
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Kenedy", linha);}
-
     public void prencherSexo(){
         driver.findElement(By.id("elementosForm:sexo:0")).click();
     }
@@ -103,7 +119,6 @@ public class Componentes {
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Masculino", linha);
     }
-
     public void prencherComidaFav(){
         driver.findElement(By.id("elementosForm:comidaFavorita:1")).click();
     }
@@ -148,9 +163,6 @@ public class Componentes {
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Sugestão de mais feriados no ano!", linha);
     }
-
-
-
 
 }
 
