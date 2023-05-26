@@ -8,20 +8,40 @@ Funcionalidade: Cadastrar usuario e acessar o site da empresa Nexxera Florianóp
 
 
 
-    @Validar_formulario
-    Esquema do Cenário: Os campos Nome, Sobrenome e Sexo são obrigatórios
-        Dado que o usuário prencheu os <elementos> com as <informações>
+    @Questão1
+    Esquema do Cenário: Preenchimento de cadastro
+
+        Dado que o usuário prencheu os campos nome, sobrenome, sexo, comida preferida, escolaridade, esporte que pratica, sugestão
         Quando clicar em Cadastrar
-        Então deve apresentar o formulário preenchido com as <informações>
+        Então no campo <elementos> deverá retornar o formulário preenchido com as <informações>
         Exemplos:
-         |  elementos                                                                            | informações     |
-         | nome, sobrenome, sexo, comida preferida, escolaridade, esporte que pratica, sugestão  | Jonh, Kenedy, 0, 2, superior, Corrida, Sugestão de mais feriados no ano! |
+         |  elementos          | informações  |
+         | nome                | Jonh         |
+         | sobrenome           | Kenedy       |
+         | sexo                | 0            |
+         | comida preferida    | 2            |
+         | escolaridade        | superior     |
+         | esporte que pratica | Corrida      |
+         | sugestão            | Sugestão de mais feriados no ano! |
+
+    @Questão2
+    Esquema do Cenário: Os campos Nome, Sobrenome e Sexo são obrigatórios
+        Dado que o usuário não preencheu <campo>
+        Quando clicar em Salvar
+        Então deve apresentar a mensagem de feedback informando que <campo><mensagem>
+        Exemplos:
+            |  campo                          | mensagem          |
+            | o campo Nome                    | Nome eh obrigatorio     |
+            | o campo Sobrenome               | Sobrenome eh obrigatorio   |
+            | o campo Sexo                    | Sexo eh obrigatorio    |
+            | os campos Nome e Sobrenome      | Nome eh obrigatorio  |
+            | os campos Nome e Sexo           | Nome eh obrigatorio |
+            | os campos Sobrenome e Sexo      | Sobrenome eh obrigatorio  |
+            | os campos Nome, Sobrenome e Sexo| Nome eh obrigatorio |
 
 
 
-
-
-    @acessar_site_nexxera
+    @Questão3
     Cenário: Acessar Nexxera Florianópolis através de pesquisa google
         Dado que o usuário pesquisou pela empresa Nexxera Florianópolis no google
         E que retornou pesquisas relacionadas a empresa Nexxera Florianópolis

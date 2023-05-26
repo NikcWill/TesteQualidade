@@ -9,13 +9,20 @@ Funcionalidade: Cadastrar usuario e acessar o site da empresa Nexxera Florianóp
 
 
     @Validar_formulario
-    Esquema do Cenário: Os campos Nome, Sobrenome e Sexo são obrigatórios
-        Dado que o usuário prencheu os <elementos> com as <informações>
+    Esquema do Cenário: Preenchimento de cadastro
+
+        Dado que o usuário prencheu os campos nome, sobrenome, sexo, comida preferida, escolaridade, esporte que pratica, sugestão
         Quando clicar em Cadastrar
-        Então deve apresentar o formulário preenchido com as <informações>
+        Então no campo <elementos> deverá retornar o formulário preenchido com as <informações>
         Exemplos:
-         |  elementos                                                                            | informações     |
-         | nome, sobrenome, sexo, comida preferida, escolaridade, esporte que pratica, sugestão  | Jonh, Kenedy, 0, 2, superior, Corrida, Sugestão de mais feriados no ano! |
+         |  elementos          | informações  |
+         | nome                | Jonh         |
+         | sobrenome           | Kenedy       |
+         | sexo                | 0            |
+         | comida preferida    | 2            |
+         | escolaridade        | superior     |
+         | esporte que pratica | Corrida      |
+         | sugestão            | Sugestão de mais feriados no ano! |
 
 
 

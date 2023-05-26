@@ -75,58 +75,81 @@ public class Componentes {
 
     }
 
-    public  void testarNome(){
+    public  void prencherNome(){
         driver.findElement(By.id("elementosForm:nome")).sendKeys("Jonh");
     }
 
     public void validarNome(){
-        Assert.assertEquals("Jonh",
-                driver.findElement(By.id("elementosForm:nome")).getAttribute("value"));
+        WebElement resposta = driver.findElement(By.id("descNome"));
+        String linha = resposta.findElement(By.tagName("span")).getText();
+        Assert.assertEquals("Jonh", linha);
     }
 
-    public void testarSobrenome(){
+    public void prencherSobrenome(){
         driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Kenedy");
     }
 
     public void validarSobrenome(){
-        Assert.assertEquals("Kenedy",
-                driver.findElement(By.id("elementosForm:sobrenome")).getAttribute("value"));
-    }
+        WebElement resposta = driver.findElement(By.id("descSobrenome"));
+        String linha = resposta.findElement(By.tagName("span")).getText();
+        Assert.assertEquals("Kenedy", linha);}
 
-    public void testarSexo(){
-        driver.findElement(By.id("elementosForm:sexo:1")).click();
+    public void prencherSexo(){
+        driver.findElement(By.id("elementosForm:sexo:0")).click();
     }
 
     public void validarSexo(){
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:sexo:1")).isSelected());
+        WebElement resposta = driver.findElement(By.id("descSexo"));
+        String linha = resposta.findElement(By.tagName("span")).getText();
+        Assert.assertEquals("Masculino", linha);
     }
 
-    public void testarComidaFav(){
+    public void prencherComidaFav(){
         driver.findElement(By.id("elementosForm:comidaFavorita:1")).click();
     }
 
     public void validarComidaFav(){
-        Assert.assertTrue(driver.findElement(By.id("elementosForm:comidaFavorita:1")).isSelected());
+        WebElement resposta = driver.findElement(By.id("descComida"));
+        String linha = resposta.findElement(By.tagName("span")).getText();
+        Assert.assertEquals("Frango", linha);
     }
 
-    public void testarEscolaridade(){
+    public void prencherEscolaridade(){
+
         WebElement select = driver.findElement(By.id("elementosForm:escolaridade"));
         Select select1 = new Select(select);
         select1.selectByValue("superior");
     }
 
     public void validarEscolaridade(){
-        Assert.assertEquals("superior",
-                driver.findElement(By.id("elementosForm:escolaridade")).getAttribute("value"));
+        WebElement resposta = driver.findElement(By.id("descEscolaridade"));
+        String linha = resposta.findElement(By.tagName("span")).getText();
+        Assert.assertEquals("superior", linha);
     }
-    public  void testarSugestoes(){
-        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Batatinha Batatinha");
+
+    public void prencherEsporte(){
+        WebElement select = driver.findElement(By.id("elementosForm:esportes"));
+        Select select1 = new Select(select);
+        select1.selectByValue("Corrida");
+
+    }
+
+    public void validarEsporte(){
+        WebElement resposta = driver.findElement(By.id("descEsportes"));
+        String linha = resposta.findElement(By.tagName("span")).getText();
+        Assert.assertEquals("Corrida", linha);
+    }
+    public  void prencherSugestoes(){
+        driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Sugestão de mais feriados no ano!");
     }
 
     public void validarSugestoes(){
-        Assert.assertEquals("Batatinha Batatinha",
-                driver.findElement(By.id("elementosForm:sugestoes")).getAttribute("value"));
+        WebElement resposta = driver.findElement(By.id("descSugestoes"));
+        String linha = resposta.findElement(By.tagName("span")).getText();
+        Assert.assertEquals("Sugestão de mais feriados no ano!", linha);
     }
+
+
 
 
 }
