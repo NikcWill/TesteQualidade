@@ -12,14 +12,26 @@ public class Componentes {
 
     public void inicializar(){
 
-        String chromedriver = System.getProperty("user.dir")
-                + "/Qualidade_teste/Driver/chromedriverMac";
-        System.setProperty("webdriver.chrome.driver", chromedriver);
+        String nomeSistemaOp = System.getProperty("os.name").toLowerCase();
+        System.out.printf(nomeSistemaOp);
+        if (nomeSistemaOp.contains("mac")){
+            String chromedriver = System.getProperty("user.dir")
+                    + "/Qualidade_teste/Driver/chromedriverMac";
+            System.setProperty("webdriver.chrome.driver", chromedriver);
+        }else if (nomeSistemaOp.contains("windowns")){
+            String chromedriver = System.getProperty("user.dir")
+                    + "/Qualidade_teste/Driver/chromedriver.exe";
+            System.setProperty("webdriver.chrome.driver", chromedriver);
+        }else {
+            String chromedriver = System.getProperty("user.dir")
+                    + "/Qualidade_teste/Driver/chromedriver";
+            System.setProperty("webdriver.chrome.driver", chromedriver);
+        }
 
-        driver = new ChromeDriver();
-        //driver.manage().window().maximize();
+            driver = new ChromeDriver();
+            //driver.manage().window().maximize();
 
-        driver.get("file:///" + System.getProperty("user.dir") + "/Qualidade_teste/Driver/componentes.html");
+            driver.get("file:///" + System.getProperty("user.dir") + "/Qualidade_teste/Driver/componentes.html");
     }
     public void acessarGoogle() {
         String url = "https://google.com.br";
