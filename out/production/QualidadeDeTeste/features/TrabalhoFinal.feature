@@ -6,8 +6,6 @@ Funcionalidade: Cadastrar usuario e acessar o site da empresa Nexxera Florianóp
     Contexto:
         Dado que o usuário instanciou o chrome-driver
 
-
-
     @Questão1
     Esquema do Cenário: Preenchimento de cadastro
 

@@ -15,13 +15,13 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário prencheu os campos nome, sobrenome, sexo, comida preferida, escolaridade, esporte que pratica, sugestão")
     public void que_o_usuário_prencheu_os_campos_nome_sobrenome_sexo_comida_preferida_escolaridade_esporte_que_pratica_sugestão() {
-        componentes.prencherNome();
-        componentes.prencherSobrenome();
-        componentes.prencherSexo();
-        componentes.prencherComidaFav();
-        componentes.prencherEscolaridade();
-        componentes.prencherEsporte();
-        componentes.prencherSugestoes();
+        componentes.preencherNome();
+        componentes.preencherSobrenome();
+        componentes.preencherSexo();
+        componentes.preencherComidaFav();
+        componentes.preencherEscolaridade();
+        componentes.preencherEsporte();
+        componentes.preencherSugestoes();
     }
 
     @Quando("clicar em Cadastrar")
@@ -73,8 +73,8 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário não preencheu o campo Nome")
     public void que_o_usuário_não_preencheu_o_campo_Nome() {
-        componentes.prencherSobrenome();
-        componentes.prencherSexo();
+        componentes.preencherSobrenome();
+        componentes.preencherSexo();
     }
 
     @Quando("cadastrar")
@@ -90,8 +90,8 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário não preencheu o campo Sobrenome")
     public void que_o_usuário_não_preencheu_o_campo_Sobrenome() {
-        componentes.prencherNome();
-        componentes.prencherSexo();
+        componentes.preencherNome();
+        componentes.preencherSexo();
     }
 
     @Então("deve apresentar a mensagem de feedback informando que Sobrenome eh obrigatorio")
@@ -102,8 +102,8 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário não preencheu o campo Sexo")
     public void que_o_usuário_não_preencheu_o_campo_Sexo() {
-        componentes.prencherNome();
-        componentes.prencherSobrenome();
+        componentes.preencherNome();
+        componentes.preencherSobrenome();
     }
 
     @Então("deve apresentar a mensagem de feedback informando que Sexo eh obrigatorio")
@@ -113,7 +113,7 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário não preencheu os campos Nome e Sobrenome")
     public void que_o_usuário_não_preencheu_os_campos_Nome_e_Sobrenome() {
-        componentes.prencherSexo();
+        componentes.preencherSexo();
     }
 
     @Então("deve apresentar a mensagem de feedback informando que os campos Nome e SobrenomeNome eh obrigatorio")
@@ -124,7 +124,7 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário não preencheu os campos Nome e Sexo")
     public void que_o_usuário_não_preencheu_os_campos_Nome_e_Sexo() {
-        componentes.prencherSobrenome();
+        componentes.preencherSobrenome();
     }
 
     @Então("deve apresentar a mensagem de feedback informando que os campos Nome e SexoNome eh obrigatorio")
@@ -134,7 +134,7 @@ public class TrabalhoFinalStep {
 
     @Dado("que o usuário não preencheu os campos Sobrenome e Sexo")
     public void que_o_usuário_não_preencheu_os_campos_Sobrenome_e_Sexo() {
-        componentes.prencherNome();
+        componentes.preencherNome();
     }
 
     @Então("deve apresentar a mensagem de feedback informando que os campos Sobrenome e Sobrenome eh obrigatorio")
@@ -178,9 +178,6 @@ public class TrabalhoFinalStep {
         componentes.fecharNavegador();
 
     }
-
-
-
 
 
 }

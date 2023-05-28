@@ -13,7 +13,7 @@ public class Componentes {
     public void inicializar(){
 
         String chromedriver = System.getProperty("user.dir")
-                + "/Qualidade_teste/Driver/chromedriver";
+                + "/Qualidade_teste/Driver/chromedriverMac";
         System.setProperty("webdriver.chrome.driver", chromedriver);
 
         driver = new ChromeDriver();
@@ -93,7 +93,7 @@ public class Componentes {
 
     }
 
-    public  void prencherNome(){
+    public  void preencherNome(){
         driver.findElement(By.id("elementosForm:nome")).sendKeys("Jonh");
     }
 
@@ -102,7 +102,7 @@ public class Componentes {
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Jonh", linha);
     }
-    public void prencherSobrenome(){
+    public void preencherSobrenome(){
         driver.findElement(By.id("elementosForm:sobrenome")).sendKeys("Kenedy");
     }
 
@@ -110,7 +110,7 @@ public class Componentes {
         WebElement resposta = driver.findElement(By.id("descSobrenome"));
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Kenedy", linha);}
-    public void prencherSexo(){
+    public void preencherSexo(){
         driver.findElement(By.id("elementosForm:sexo:0")).click();
     }
 
@@ -119,7 +119,7 @@ public class Componentes {
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Masculino", linha);
     }
-    public void prencherComidaFav(){
+    public void preencherComidaFav(){
         driver.findElement(By.id("elementosForm:comidaFavorita:1")).click();
     }
 
@@ -129,7 +129,7 @@ public class Componentes {
         Assert.assertEquals("Frango", linha);
     }
 
-    public void prencherEscolaridade(){
+    public void preencherEscolaridade(){
 
         WebElement select = driver.findElement(By.id("elementosForm:escolaridade"));
         Select select1 = new Select(select);
@@ -142,7 +142,7 @@ public class Componentes {
         Assert.assertEquals("superior", linha);
     }
 
-    public void prencherEsporte(){
+    public void preencherEsporte(){
         WebElement select = driver.findElement(By.id("elementosForm:esportes"));
         Select select1 = new Select(select);
         select1.selectByValue("Corrida");
@@ -154,7 +154,7 @@ public class Componentes {
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Corrida", linha);
     }
-    public  void prencherSugestoes(){
+    public  void preencherSugestoes(){
         driver.findElement(By.id("elementosForm:sugestoes")).sendKeys("Sugestão de mais feriados no ano!");
     }
 
