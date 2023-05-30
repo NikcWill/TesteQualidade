@@ -10,15 +10,16 @@ import java.net.SocketOption;
 public class Componentes {
     private WebDriver driver;
 
+
     public void inicializar(){
 
         String nomeSistemaOp = System.getProperty("os.name").toLowerCase();
-        System.out.printf(nomeSistemaOp);
+
         if (nomeSistemaOp.contains("mac")){
             String chromedriver = System.getProperty("user.dir")
                     + "/Qualidade_teste/Driver/chromedriverMac";
             System.setProperty("webdriver.chrome.driver", chromedriver);
-        }else if (nomeSistemaOp.contains("windowns")){
+        }else if (nomeSistemaOp.contains("windows")){
             String chromedriver = System.getProperty("user.dir")
                     + "/Qualidade_teste/Driver/chromedriver.exe";
             System.setProperty("webdriver.chrome.driver", chromedriver);
@@ -29,9 +30,11 @@ public class Componentes {
         }
 
             driver = new ChromeDriver();
-            //driver.manage().window().maximize();
+            driver.manage().window().maximize();
 
             driver.get("file:///" + System.getProperty("user.dir") + "/Qualidade_teste/Driver/componentes.html");
+
+
     }
     public void acessarGoogle() {
         String url = "https://google.com.br";
@@ -81,8 +84,6 @@ public class Componentes {
     public void validarAlertNome(){
         Alert alert = driver.switchTo().alert();
         String textoAlerta = alert.getText();
-        System.out.println("entrou");
-        System.out.println(textoAlerta);
         Assert.assertEquals("Nome eh obrigatorio", textoAlerta);
 
     }
@@ -90,8 +91,6 @@ public class Componentes {
     public void validarAlertSobrenome(){
         Alert alert = driver.switchTo().alert();
         String textoAlerta = alert.getText();
-        System.out.println("entrou");
-        System.out.println(textoAlerta);
         Assert.assertEquals("Sobrenome eh obrigatorio", textoAlerta);
 
     }
@@ -99,8 +98,6 @@ public class Componentes {
     public void validarAlertSexo(){
         Alert alert = driver.switchTo().alert();
         String textoAlerta = alert.getText();
-        System.out.println("entrou");
-        System.out.println(textoAlerta);
         Assert.assertEquals("Sexo eh obrigatorio", textoAlerta);
 
     }
@@ -174,6 +171,7 @@ public class Componentes {
         WebElement resposta = driver.findElement(By.id("descSugestoes"));
         String linha = resposta.findElement(By.tagName("span")).getText();
         Assert.assertEquals("Sugestão de mais feriados no ano!", linha);
+
     }
 
 }

@@ -108,6 +108,7 @@ public class TrabalhoFinalStep {
 
     @Então("deve apresentar a mensagem de feedback informando que Sexo eh obrigatorio")
     public void deve_apresentar_a_mensagem_de_feedback_informando_que_Sexo_eh_obrigatorio() {
+        componentes.validarAlertSexo();
         componentes.fecharNavegador();
     }
 
@@ -127,9 +128,10 @@ public class TrabalhoFinalStep {
         componentes.preencherSobrenome();
     }
 
-    @Então("deve apresentar a mensagem de feedback informando que os campos Nome e SexoNome eh obrigatorio")
+    @Então("deve apresentar a mensagem de feedback informando que os campos Nome eh obrigatorio")
     public void deve_apresentar_a_mensagem_de_feedback_informando_que_os_campos_Nome_e_SexoNome_eh_obrigatorio() {
-        componentes.validarAlertNome();
+       componentes.validarAlertNome();
+       componentes.fecharNavegador();
     }
 
     @Dado("que o usuário não preencheu os campos Sobrenome e Sexo")
@@ -152,6 +154,7 @@ public class TrabalhoFinalStep {
     public void deve_apresentar_a_mensagem_de_feedback_informando_que_os_campos_Nome_Sobrenome_e_SexoNome_eh_obrigatorio() {
         componentes.validarAlertNome();
         componentes.fecharNavegador();
+
     }
 
     @Dado("que o usuário pesquisou pela empresa Nexxera Florianópolis no google")
