@@ -41,7 +41,6 @@ public class Componentes {
         System.out.println(driver);
         driver.get(url);
     }
-
     public void pesquisarGoogle(){
         driver.findElement(By.name("q")).sendKeys("SENAC Palhoça");
     }
